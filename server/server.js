@@ -6,6 +6,14 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'ai-powered-web-app-builder-six.vercel.app'
+  ],
+  credentials: true
+}));
+
 const startServer = async () => {
   try {
     await connectDB();
